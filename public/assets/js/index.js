@@ -52,13 +52,24 @@ const saveNote = (note) =>
       console.log(postResponse);
   });
 
+  //Changed to delete note from API based on uuid
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
-    method: 'DELETE',
+    method: "DELETE",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
-  });
+  })
+    .then((response) => {
+      if (response.ok) {
+        console.log(response)
+        return response;
+      }
+      alert("Error: " + response.statusText);
+    })
+    .then((postResponse) => {
+      console.log(postResponse);
+    });
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
