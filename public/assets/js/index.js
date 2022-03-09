@@ -33,7 +33,7 @@ const getNotes = () =>
     },
   });
 
-//CHANGED. REF 11.3.5
+//Changed to return the data from the API. REF 11.3.5
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
