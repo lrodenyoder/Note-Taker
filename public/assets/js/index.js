@@ -33,6 +33,7 @@ const getNotes = () =>
     },
   });
 
+//CHANGED. REF 11.3.5
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
@@ -40,6 +41,16 @@ const saveNote = (note) =>
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(note),
+  })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      alert('Error: ' + response.statusText);
+    })
+    .then(postResponse => {
+      console.log(postResponse);
+      alert('Note posted')
   });
 
 const deleteNote = (id) =>

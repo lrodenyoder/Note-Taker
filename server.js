@@ -5,26 +5,26 @@ const app = express();
 // const htmlRoutes = require('./routes/htmlRoutes');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(express.static('public'));
-
+app.use(express.static('public'));
 
 // //use api routes
 // app.use('/api', apiRoutes);
 // app.use('/', htmlRoutes);
 
-//move to other files later
+//move to lib/db.js
 const fs = require('fs');
 const path = require('path');
+//move to apiRoutes
 const { v4: uuidv4 } = require("uuid");
 const { notes } = require('./db/db');
 
 
-
-//move to other files later
+//move to apiRoutes
 app.get('/api/notes', (req, res) => {
     res.json(notes);
 });
 
+//move to apiRoutes
 app.post('/api/notes', (req, res) => {
     console.log(req.body);
     //set id with uuid
@@ -38,9 +38,16 @@ app.post('/api/notes', (req, res) => {
     }
 });
 
+//move to htmlRoutes
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+});
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/notes.html'));
+});
 
 
-
+//move to lib/db.js 
 function createNewNote(body, notesArray) {
     const note = body;
     notesArray.push(note)
@@ -53,6 +60,7 @@ function createNewNote(body, notesArray) {
     return body;
 };
 
+//move to lib/db.js 
 function validateNote(note) {
     if (!note.title || typeof note.title !== 'string') {
         return false;
