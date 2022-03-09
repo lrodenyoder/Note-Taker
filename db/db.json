@@ -1,36 +1,5 @@
 {
   "notes": [
-    {
-      "title": "Test Title",
-      "text": "Test text"
-    },
-    {
-      "title": "Test Title2",
-      "text": "Test text2"
-    },
-    {
-      "title": "Test Title23",
-      "text": "Test text3"
-    },
-    {
-      "title": "4",
-      "text": "4",
-      "id": "97c5b8d6-a898-4ecb-a413-66f7835bec23"
-    },
-    {
-      "title": "4",
-      "text": "4",
-      "id": "a9c5470d-fc29-40c5-adfc-8fabbbe3348a"
-    },
-    {
-      "title": "5",
-      "text": "5",
-      "id": "5fc16f13-915a-4b11-b4af-88cf745199b4"
-    },
-    {
-      "title": "lkjlkjl",
-      "text": "lkjlkjlkjl",
-      "id": "55570bc1-9f61-4242-b4f7-cdaf13e8426a"
-    }
+    
   ]
 }
